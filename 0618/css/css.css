@@ -1,0 +1,1069 @@
+.menu-area nav .menu-link.active {
+  color: rgb(156, 156, 156);
+  font-weight: bold;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body {
+  overflow-x: hidden;
+  color: #333;
+  position: relative;
+}
+
+.wrap {
+  width: 100%;
+  margin: 0 auto;
+}
+header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2vw;
+}
+header .logo a {
+  /* vw : viewport width */
+  font-size: 24px;
+  color: #000;
+  font-family: "RiaSans-ExtraBold";
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+header .logo a span {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #181818;
+}
+header .logo:hover a,
+header .logo:hover a span {
+  color: #535353;
+  color: #bababa;
+}
+
+/* heder안으 menu-btn과 menu0area안의 menu-btn스타일지정 */
+.menu-btn {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-btn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.menu-btn span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #000;
+  transition: transform 0.3s, top 0.3s;
+}
+
+/* 기본 위치 */
+.menu-btn span:first-child {
+  top: 8px;
+}
+
+.menu-btn span:last-child {
+  top: 18px;
+}
+
+/* 클릭 시 X 모양 */
+.menu-btn a.active span:first-child {
+  transform: rotate(45deg);
+  top: 13px;
+  /* 중앙 위치 */
+}
+
+.menu-btn a.active span:last-child {
+  transform: rotate(-45deg);
+  top: 13px;
+  /* 중앙 위치 */
+}
+
+.menu-area {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto; /* 세로 스크롤 가능 */
+  background-color: rgba(225, 225, 225, 0.9);
+  max-height: 100vh; /* 화면을 넘지 않게 */
+  z-index: 99;
+  padding: 2vw;
+  display: none;
+}
+
+.menu-area .close {
+  float: right;
+}
+
+.menu-area nav {
+  position: absolute;
+  top: 10vw;
+  left: 0;
+  width: 100%;
+}
+
+.menu-area nav ul p {
+  width: 0;
+  height: 1px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  transition: all 0.3s;
+}
+
+.menu-area.active nav ul p {
+  width: 100%;
+}
+.menu-area nav .sub {
+  color: #fff;
+  left: 100%;
+  min-width: 160px;
+  background: transparent;
+  border-top: 1px solid #ccc;
+  z-index: 100;
+  padding-left: 6.5em;
+}
+.menu-area nav .sub li {
+  padding: 0 1em;
+}
+
+.menu-area nav ul li a {
+  font-family: "RiaSans-ExtraBold";
+  font-size: 2.6vw;
+  color: #666;
+  padding: 0 5vw;
+  transition: all 0.3s;
+}
+
+/* 3번째 메뉴(인덱스번호는 5임)의 서브메뉴 자리 배치 */
+.menu-area nav > ul > li:nth-child(5) {
+  display: flex;
+}
+
+.menu-area nav .sub {
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 5vw;
+}
+
+.menu-area nav .sub li a {
+  opacity: 0;
+  transform: translareX(-10%);
+  transition: all 0.3s;
+}
+
+.menu-area.active nav .sub li a {
+  opacity: 1;
+  transition: translareX(0);
+}
+
+.menu-area.active nav .sub li:first-child a {
+  transition-delay: 0.3s;
+}
+
+.menu-area.active nav .sub li:nth-child(2) a {
+  transition-delay: 0.4s;
+}
+
+.menu-area.active nav .sub li:nth-child(3) a {
+  transition-delay: 0.5s;
+}
+
+.menu-area.active nav .sub li:nth-child(4) a {
+  transition-delay: 0.5s;
+}
+
+.menu-area.active nav .sub li:nth-child(5) a {
+  transition-delay: 0.6s;
+}
+
+.menu-area nav ul {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.5vw;
+}
+
+.menu-area nav .sub li a {
+  font-size: 1.4vw;
+  font-family: "SacheonUju-Regular";
+  color: #777;
+  padding: 0.7vw;
+}
+
+.s1 {
+  width: 100%;
+  padding-top: 8vw;
+}
+
+.s1 .main-txt {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  background-size: cover;
+}
+
+.s1 .main-txt div {
+  text-align: center;
+  /* div영역의 크기가 변할 때 중심점을 가운데로 설정 */
+  transform-origin: center;
+  transform: scale(1) translate3d(0, 0, 0) rotateZ(0);
+  opacity: 1;
+  display: inline-block;
+}
+
+/* s1 영역의 단어 줄바꿈 */
+.s1 .main-txt .clear {
+  display: block;
+}
+
+.s1 .main-txt span {
+  font-size: 5vw;
+  font-family: "RiaSans-ExtraBold";
+  opacity: 0;
+  /* 요소의 변화를 미리 브라우저에게 알려주어 최적화를 하게 하는 속성 - 자바스크립트나 제이쿼리 css를 제어할때 사용 */
+  will-change: transform, opacity;
+}
+
+/* blurEffect라는 이름의 애니메이션 효과를 선언 */
+@keyframes blurEffect {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+.s1 .main-txt .txt1 {
+  /* 크기는 1.1배, 위로40ㅔㅌ 이동, 회전 안함 */
+  transform: scale(1.1) translate3d(0, -40px, 0) rotateZ(0);
+  transition: all 1.4s 1s ease-in-out;
+}
+
+.s1 .main-txt .txt2 {
+  /* 크기는 1.1배, 오른쪽 40px 이동, 회전 이동 */
+  transform: scale(1.1) translate3d(-40px, 0, 0) rotateZ(0);
+  transition: all 1.4s 1s ease-in-out;
+}
+
+.s1 .main-txt .txt3 {
+  /* 크기는 1.1배, 오른쪽 40px 이동, 회전 이동 */
+  transform: scale(1.1) translate3d(40px, 0, 0) rotateZ(0);
+  transition: all 1.4s 1s ease-in-out;
+}
+
+.s1 .main-txt.active div {
+  /* 베지어 곡선(x1,y1,x2,y2좌표값) */
+  transform: scale(1) translate3d(0, 0, 0) rotateZ(0);
+}
+
+.s1 .main-txt .txt1 span.active {
+  /* 베지어 곡선(x1,y1,x2,y2좌표값) */
+  animation: blurEffect 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s forwards;
+}
+
+.s1 .main-txt .txt2 span.active {
+  /* 베지어 곡선(x1,y1,x2,y2좌표값) */
+  animation: blurEffect 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.7s forwards;
+}
+
+.s1 .main-txt .txt3 span.active {
+  /* 베지어 곡선(x1,y1,x2,y2좌표값) */
+  animation: blurEffect 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s forwards;
+}
+
+.s2 {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  min-width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s2 .main-photo {
+  flex: 0 0 45%;
+  max-width: 700px;
+  min-width: 400px;
+  margin-right: 3vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.5s;
+  overflow: hidden;
+  background-image: none;
+}
+.s2 .main-photo img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+.s2 .words {
+  flex: 1 1 50%;
+  max-width: 800px;
+  min-width: 350px;
+  padding: 50px 0 50px 3vw;
+  position: static;
+  transform: none;
+}
+
+.s2 .words h2 {
+  font-size: 5vw;
+  opacity: 0;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
+  transform: translateY(250px);
+  transition: all 1.5s;
+  color: #000;
+}
+/* 위아래 반복 움직임 */
+
+.s2 .words h2:last-child {
+  font-size: 8vw;
+  display: inline-block;
+  animation: floatUpDown 1.5s ease-in-out infinite;
+  margin-top: 25%;
+}
+
+.s2 .words h2:last-child span {
+  font-size: 3.5vw;
+  transition: all 0.3s;
+}
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.s2 .words h1 {
+  font-size: 1.5vw;
+  opacity: 0;
+  color: #000;
+  transform: translateY(50px);
+  transition: all 1.4s;
+}
+.s2 .words p {
+  font-size: 1.5vw;
+  opacity: 0;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
+  transform: translateY(50px);
+  transition: all 1.4s;
+  color: #000;
+}
+.s2 .words h1:last-child {
+  font-size: 3vw;
+}
+
+.s2 .words.active h2:first-child {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0;
+}
+.s2 .words.active h1:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0;
+}
+
+.s2 .words.active p:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+.s2 .words.active h2:last-child {
+  opacity: 1;
+  transform: translateY(250px);
+  transition-delay: 0.9s;
+}
+
+.s3 {
+  width: 100%;
+}
+
+.s3 .mine {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 10vw;
+}
+
+.s3 .mine .mine-txt {
+  font-size: 10vw;
+  z-index: 10;
+  line-height: 2;
+  margin: 5vw 0;
+  font-family: "SacheonUju-Regular";
+  font-weight: bold;
+  margin: 0 auto;
+}
+.s3 .mine .mine-txt p {
+  font-size: 2.5vw;
+  display: inline-block;
+  animation: floatUpDown 1.5s ease-in-out infinite;
+  margin-top: 25%;
+}
+.s3 .mine .mine-txt p {
+  opacity: 1;
+  transform: translateY(250px);
+  transition-delay: 0.9s;
+}
+.s7 .contact {
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+.s7 .email-icon img {
+  width: 100%;
+}
+.s2 .words h2:hover,
+.s2 .words h1:hover,
+.s2 .words p:hover,
+.s3 .mine .mine-txt p:hover {
+  background: linear-gradient(90deg, #bababa);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@keyframes translateY {
+  99% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@font-face {
+  font-family: "RiaSans-ExtraBold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/RiaSans-ExtraBold.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.s4 {
+  width: 100%;
+  overflow: hidden;
+  padding: 10vw 0;
+}
+
+.s4 h2 {
+  overflow: hidden;
+  font-size: 3vw;
+  text-align: center;
+  animation: floatUpDown 1.5s ease-in-out infinite;
+}
+.s4 h2 span {
+  display: inline-block;
+  font-size: 1.5vw;
+  position: relative;
+  bottom: 15px;
+}
+
+.s4 .main-slide {
+  padding: 0 2vw;
+  padding-top: 45px;
+  position: relative;
+}
+
+.s4 .swiper {
+  /* 1160px */
+  width: 80.556vw;
+  margin: 0 auto;
+  border-radius: 30px;
+}
+
+.s4 .swiper .swiper-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+.s4 .swiper .swiper-slide > div:first-child {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vw;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  /* filter: grayscale(1);
+    transition: filter 0.4s; */
+}
+
+.s4 .swiper .swiper-slide .slide-bg1 {
+  background-image: url(../img/happy-valentines-day-1375125_1920.jpg);
+}
+
+.s4 .swiper .swiper-slide .slide-bg2 {
+  background-image: url(../img/happy-valentines-day-1375125_1920.jpg);
+}
+
+.s4 .swiper .swiper-slide .slide-bg3 {
+  background-image: url(../img/happy-valentines-day-1375125_1920.jpg);
+}
+
+.slide-des {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  transition: bottom 0.5s ease;
+  z-index: 10;
+  height: 50%;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.s4 .swiper .swoper-slide .slide-des {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  color: white;
+  left: 0;
+  bottom: 0;
+}
+
+.s4 .swiper .swiper-slide .slide-des .tip span {
+  color: #333;
+}
+
+.s4 .swiper .swiper-slide .slide-des h3 {
+  font-size: 2.2vw;
+  margin: 1.1vw;
+  color: #fff;
+}
+
+.slide-des h3,
+.slide-des p {
+  transform: translateY(20px);
+  opacity: 0;
+  margin: 1.1vw;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.swiper-slide:hover .slide-des,
+.swiper-slide:hover .slide-des {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.swiper-slide:hover .slide-des h3,
+.swiper-slide:hover .slide-des p {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.s4 .swiper .swiper-slide .slide-des a {
+  color: #98e4ff;
+  display: inline-block;
+}
+
+.s4 .swiper .swiper-slide .slide-des b {
+  position: absolute;
+  width: 100%;
+  height: 60%;
+  color: white;
+  left: 0;
+  bottom: -100%;
+  font-size: 1vw;
+  line-height: 1vw;
+  line-height: 1.7;
+  transition: bottom 0.3s;
+  font-weight: normal;
+  margin-bottom: 50px;
+}
+
+.s4 .swiper:hover .swiper-slide .slide-des {
+  bottom: 0;
+}
+
+.s4 .swiper-button-prev {
+  color: #333;
+  margin-left: 5%;
+}
+
+.s4 .swiper-button-next {
+  color: #333;
+  margin-right: 5%;
+}
+
+.s4 .swiper-button-prev:after {
+  color: #333;
+  margin-left: 10%;
+}
+
+.s4 .swiper-button-next:after {
+  color: #333;
+}
+
+.s5 {
+  width: 100%;
+  /* height: 100vh; */
+  margin: 0 auto;
+}
+.s5 .skill-wrap .txt p {
+  width: 100%;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 100px;
+  margin-left: 10%;
+}
+.email-ani img {
+  height: auto;
+}
+.container-skills {
+  max-width: 80%;
+  margin: 0 auto 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2vw;
+  margin-bottom: 500px;
+}
+.bar {
+  position: relative;
+  background-color: #d8d8d8;
+  height: 10px;
+  margin: 0 0 20px 0;
+}
+.bar-fill {
+  position: absolute;
+  height: 10px;
+}
+.bar-title {
+  position: relative;
+  font-size: 1em;
+  text-align: left;
+  margin: 0 0 5px 0;
+}
+.percent {
+  position: absolute;
+  right: 0;
+}
+
+/* Animations Below - Replace ease-out with infinite for infinite loop*/
+/*Edit here for html*/
+.bar-fill-html {
+  width: 90%;
+  background-color: #003088;
+  animation: bar-fill-html 2s ease-out;
+  -moz-animation: bar-fill-html 2s ease-out;
+  -webkit-animation: bar-fill-html 2s ease-out;
+}
+@keyframes bar-fill-html {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 90%;
+  }
+}
+@-moz-keyframes bar-fill-html {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 90%;
+  }
+}
+@-webkit-keyframes bar-fill-html {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 90%;
+  }
+}
+/*Edit here for Javascript*/
+.bar-fill-javascript {
+  width: 60%;
+  background-color: #003088;
+  animation: bar-fill-javascript 2s ease-out;
+  -moz-animation: bar-fill-javascript 2s ease-out;
+  -webkit-animation: bar-fill-javascript 2s ease-out;
+}
+@keyframes bar-fill-javascript {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 60%;
+  }
+}
+@-moz-keyframes bar-fill-javascript {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 60%;
+  }
+}
+@-webkit-keyframes bar-fill-javascript {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 60%;
+  }
+}
+/*Edit here for Jquery*/
+.bar-fill-jquery {
+  width: 70%;
+  background-color: #003088;
+  animation: bar-fill-jquery 2s ease-out;
+  -moz-animation: bar-fill-jquery 2s ease-out;
+  -webkit-animation: bar-fill-jquery 2s ease-out;
+}
+@keyframes bar-fill-jquery {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 70%;
+  }
+}
+@-moz-keyframes bar-fill-jquery {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 70%;
+  }
+}
+@-webkit-keyframes bar-fill-jquery {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 70%;
+  }
+}
+/*Edit here for Responsive*/
+.bar-fill-responsive {
+  width: 90%;
+  background-color: #003088;
+  animation: bar-fill-responsive 2s ease-out;
+  -moz-animation: bar-fill-responsive 2s ease-out;
+  -webkit-animation: bar-fill-responsive 2s ease-out;
+}
+@keyframes bar-fill-responsive {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 90%;
+  }
+}
+@-moz-keyframes bar-fill-responsive {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 90%;
+  }
+}
+@-webkit-keyframes bar-fill-responsive {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 90%;
+  }
+}
+/*Edit here for Photoshop*/
+.bar-fill-photoshop {
+  width: 20%;
+  background-color: #003088;
+  animation: bar-fill-photoshop 2s ease-out;
+  -moz-animation: bar-fill-photoshop 2s ease-out;
+  -webkit-animation: bar-fill-photoshop 2s ease-out;
+}
+@keyframes bar-fill-photoshop {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 20%;
+  }
+}
+@-moz-keyframes bar-fill-photoshop {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 20%;
+  }
+}
+@-webkit-keyframes bar-fill-photoshop {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 20%;
+  }
+}
+
+.s5 .skill-wrap .skill-photo {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.s5 .skill-wrap .skill-photo div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.15);
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+.s5 .skill-wrap .skill-photo .skill-img1 {
+  z-index: 2;
+  opacity: 1;
+}
+.s5 .skill-wrap .skill-photo .skill-img2 {
+  z-index: 3;
+  opacity: 0;
+}
+.s6 {
+  width: 100%;
+}
+
+/* 흐르는 글자 */
+.s6 .flow-txt-wrap {
+  position: relative;
+  padding-bottom: 8vw;
+  font-weight: bold;
+  color: #ccc;
+  font-size: 1.2rem;
+}
+
+.s6 .flow-txt-wrap .flow-txt {
+  position: absolute;
+  top: -350px;
+  left: 0;
+  display: flex;
+  gap: 8vw;
+  color: #fff;
+  white-space: nowrap;
+  font-size: 5.208vw;
+  font-family: "SacheonUju-Regular";
+}
+
+@keyframes flowTxt {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.s6 .board {
+  margin-top: 2vw;
+  padding: 0 3vw;
+}
+
+.s6 .board h2 {
+  font-size: 3.2vw;
+  text-align: center;
+  font-family: "SacheonUju-Regular";
+}
+
+.s6 .board iframe {
+  width: 100%;
+  height: 300px;
+}
+
+.s7 {
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+.s7 .contact {
+  display: flex;
+}
+@keyframes contactFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.letter-image {
+  position: absolute;
+  left: 50%;
+  cursor: pointer;
+}
+
+.letter-image.active .shadow {
+  width: 250px;
+}
+
+/* 구글 이메일 연동 */
+.email .email-box .form-elements div {
+  display: flex;
+  align-items: flex-end;
+  margin: 15px 0;
+}
+
+.email .email-box label {
+  padding: 10px 0;
+  display: block;
+  width: 70px;
+}
+.email .email-box textarea {
+  border: 1px solid #ddd;
+  padding-top: 15px;
+  background-color: transparent;
+  font-size: 20px;
+  width: 90%;
+  padding: 10px;
+}
+.email input {
+  border: 1px solid #eee;
+  background-color: transparent;
+  font-size: 20px;
+  width: 800px;
+  padding: 10px;
+}
+
+.email .email-box input::placeholder,
+.email .email-box textarea::placeholder {
+  font-size: 25px;
+  color: #ccc;
+  font-weight: normal;
+}
+
+.email .email-box h2 {
+  font-size: 4rem;
+  margin-bottom: 50px;
+}
+
+.email .email-box h2,
+.email .email-box label,
+.email .email-box input,
+.email .email-box textarea {
+  font-family: "SacheonUju-Regular";
+}
+
+.email .email-box button {
+  background-color: #7fa1c3;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 6px;
+  font-size: 25px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-family: "SacheonUju-Regular";
+}
+
+footer {
+  text-align: center;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-top: 5vw;
+  padding: 1vw 0;
+  font-family: "SacheonUju-Regular";
+}
+
+/* top버튼 */
+.top {
+  position: fixed;
+  right: 50px;
+  bottom: 20px;
+  cursor: pointer;
+  z-index: 10;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top:before {
+  content: "";
+  position: absolute;
+  background-color: #333;
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  top: 0;
+  left: 0;
+  transform: rotateZ(45deg);
+}
+
+.top a {
+  color: white;
+  z-index: 0;
+}
