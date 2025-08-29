@@ -334,7 +334,7 @@ header .logo:hover a span {
   padding: 50px;
   position: absolute;
   left: 2%;
-  top: 20%;
+top: 10%;
   transform: rotateY(-50%);
 }
 
@@ -1057,3 +1057,4 @@ footer {
   color: white;
   z-index: 0;
 }
+
