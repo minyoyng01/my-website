@@ -311,41 +311,31 @@ header .logo:hover a span {
 .s2 {
   position: relative;
   width: 100%;
-  max-width: 1920px;
-  min-width: 1200px;
   height: 100vh;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 100px auto 0;
 }
 
 .s2 .main-photo {
-  flex: 0 0 45%;
-  max-width: 700px;
-  min-width: 400px;
-  margin-right: 3vw;
-  background-position: center;
+  display: block;
+  text-align: end;
   background-repeat: no-repeat;
   background-size: cover;
   transition: all 0.5s;
   overflow: hidden;
-  background-image: none;
 }
 .s2 .main-photo img {
-  width: 100%;
+  width: 50%;
   height: auto;
   object-fit: cover;
-  border-radius: 20px;
-  display: block;
+  position: relative;
+  left: 100px;
 }
 .s2 .words {
-  flex: 1 1 50%;
-  max-width: 800px;
-  min-width: 350px;
-  padding: 50px 0 50px 3vw;
-  position: static;
-  transform: none;
+  padding: 50px;
+  position: absolute;
+  left: 2%;
+  top: 20%;
+  transform: rotateY(-50%);
 }
 
 .s2 .words h2 {
@@ -426,8 +416,7 @@ header .logo:hover a span {
 }
 
 .s3 .mine {
-  width: 100%;
-  max-width: 1800px;
+  width: 1800px;
   margin: 0 auto;
   padding: 10vw;
 }
@@ -437,9 +426,9 @@ header .logo:hover a span {
   z-index: 10;
   line-height: 2;
   margin: 5vw 0;
+  text-align: center;
   font-family: "SacheonUju-Regular";
   font-weight: bold;
-  margin: 0 auto;
 }
 .s3 .mine .mine-txt p {
   font-size: 2.5vw;
@@ -656,9 +645,6 @@ header .logo:hover a span {
   font-weight: bold;
   margin-bottom: 100px;
   margin-left: 10%;
-}
-.email-ani img {
-  height: auto;
 }
 .container-skills {
   max-width: 80%;
@@ -943,11 +929,16 @@ header .logo:hover a span {
 
 .s7 {
   width: 100%;
-  max-width: 1700px;
-  margin: 0 auto;
 }
 .s7 .contact {
   display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+.s7 .email-ani img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
 }
 @keyframes contactFadeIn {
   0% {
