@@ -47,18 +47,19 @@
                     <li><a href="#s1" class="menu-link">INTRO</a></li>
                     <li><a href="#s2" class="menu-link">INTRODUCTION</a></li>
                     <li>
-                        <a href="#s4" class="menu-link">PROFILE</a>
-                        <ul class="sub">
-                            <li><a href="" class="menu-link">Portfolio1</a></li>
-                            <li><a href="" class="menu-link">Portfolio2</a></li>
-                            <li><a href="" class="menu-link">Portfolio3</a></li>
-                            <li><a href="" class="menu-link">Portfolio4</a></li>
-                            <li><a href="" class="menu-link">Portfolio5</a></li>
+                        <a href="#s4" class="menu-link profile-main">PROFILE</a>
+                        <ul class="sub" style="display:none;">
+                            <li><a href="http://wkdalsdud77.dothome.co.kr/EX/" target="_blank" class="menu-link">Portfolio1</a></li>
+                            <li><a href="https://www.hwaseunggroup.com/kor/main/" target="_blank" class="menu-link">Portfolio2</a></li>
+                            <li><a href="http://127.0.0.1:5500/index.html#" target="_blank" class="menu-link">Portfolio3</a></li>
+                            <li><a href="http://127.0.0.1:5500/index.html#" target="_blank" class="menu-link">Portfolio4</a></li>
+                            <li><a href="http://127.0.0.1:5500/index.html#" target="_blank" class="menu-link">Portfolio5</a></li>
                         </ul>
                     </li>
-                    <li><a href="#s5" class="menu-link">SKILL</a></li>
-                    <li><a href="#s6" class="menu-link">FLOW</a></li>
+                     <li><a href="#s5" class="menu-link">ABOUT ME</a></li> 
+                    <li><a href="#s6" class="menu-link">SKILL</a></li>
                     <li><a href="#s7" class="menu-link">CONTACT</a></li>
+
                 </ul>
             </nav>
             </nav>
@@ -108,13 +109,15 @@
         </div>
         <div class="words">
             <h2>Welcome to My Portfolio</h2>
-            <h1>포트폴리오에 오신걸 환영합니다.</h1>
-            <p>지금부터 제 포트폴리오를 소개하겠습니다.<br></p>
+            <p>안녕하세요. 웹사이트에 오신걸 환영합니다.</p>
+            <p>지금부터 포트폴리오를 소개하겠습니다.<br></p>
             <h2>Go! <span>▼</span></h2>
         </div>
     </section>
     <section class="s4" id="s4">
-        <h2><span>▼</span> PORTFOLIO <span> ▼</span></h2>
+        <div class="txt">
+            <h2><span>▼</span> PORTFOLIO <span> ▼</span></h2>
+        </div>
         <div class="main-slide">
             <!-- Slider main container -->
             <div class="swiper">
@@ -131,7 +134,7 @@
                             <h3>EX</h3>
                             <p>
                                 원본 :<a href="http://wkdalsdud77.dothome.co.kr/EX/" target="_blank">EX</a><br>
-                                벤치마킹 :</a><br>
+                                벤치마킹 :<br>
                                 리뉴얼 : <a href="" target="_blank"></a><br>
                                 <b>스킬 : HTML5,CSS3, Figma, </b><br>
                             </p>
@@ -197,11 +200,62 @@
     </section>
 
     <section class="s5" id="s5">
-                <div class="skill-wrap">
-                    <div class="txt">
-                        <p>SKILL</p>
-                    </div>
-                    <div class="container-skills">
+        <div class="skill-wrap">
+            <div class="about-me con1" >
+                                <div class="txt">
+                                    <h2><span>▼</span>ABOUT ME<span>▼</span></h2>
+                                </div>
+                                <div class="box1">
+                                    <div class="icon1">
+                                        <img src="img/user.png" alt="icon1">
+                                        <div>
+                                            <b>이름</b><br>
+                                            <span>장민영</span>
+                                        </div>
+                                    </div>
+                                    <div class="icon1">
+                                        <img src="img/cake.png" alt="icon1">
+                                        <div>
+                                            <b>생년월일</b><br>
+                                            <span>1999.12.15</span>
+                                        </div>
+                                    </div>
+                                    <div class="icon1">
+                                        <img src="img/contacts.png" alt="icon1">
+                                        <div>
+                                            <b>연락처</b><br>
+                                            <span>010-3628-1056</span>
+                                        </div>
+                                    </div>
+                                    <div class="icon1">
+                                        <img src="img/email.png" alt="icon1">
+                                        <div>
+                                            <b>이메일</b><br>
+                                            <span>wkdalsdud88@naver.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="icon1">
+                                        <img src="img/mapss.png" alt="icon1">
+                                        <div>
+                                            <b>위치</b><br>
+                                            <span>인천광역시 서구</span>
+                                        </div>
+                                    </div>
+                                    <div class="icon1">
+                                        <img src="img/mortarboard.png" alt="icon1">
+                                        <div>
+                                            <b>최종 학력</b><br>
+                                            <span>오산대학<br>(디지털콘텐츠디자인과)</span>
+                                        </div>
+                                    </div>
+                                </div> 
+                               <h2 class="special">Go! </h2>
+            </div>
+            <div style="flex:2; min-width:400px;">
+                <div class="txt">
+                    <h2><span>▼</span>SKILL<span>▼</span></h2>
+                </div>
+                <div class="container-skills">
                         <div class="html">
                             <p class="bar-title">
                                 HTML / HTML5 &amp; CSS
@@ -247,15 +301,19 @@
                                 <div class="bar-fill bar-fill-photoshop start"></div>
                             </div>
                         </div>
+      
+                         
+                         
                     </div>
-                    <div class="skill-photo">
-                        <div class="skill-img1">
-                            <img src="img/happy-valentines-day-1375125_1920.jpg" alt="이미지" class="img1">
-                        </div>
-                        <div class="skill-img2">
-                            <img src="img/cockpit-4598188_1280.jpg" alt="이미지" class="img2">
-                        </div>
+                <div class="skill-photo">
+                    <div class="skill-img1">
+                        <img src="img/happy-valentines-day-1375125_1920.jpg" alt="이미지" class="img1">
                     </div>
+                    <div class="skill-img2">
+                        <img src="img/cockpit-4598188_1280.jpg" alt="이미지" class="img2">
+                    </div>
+                </div>
+            </div>
                 </div>
     </section>
 
@@ -285,7 +343,7 @@
                                 <div>
                                     <label for="name">성 명 : </label>
                                     <input id="name" name="name" placeholder="당신의 성명을 작성해 주세요." />
-                                    <span id="name-error" style="color:red; display:none; font-size:0.9em;">성명을 입력해 주세요.</span>
+                                    <span id="name-error" style="color:rgb(0, 0, 0); display:none; font-size:0.9em;">성명을 입력해 주세요.</span>
                                 </div>
                                 <div>
                                     <label for="email">이메일 : </label>
@@ -297,7 +355,6 @@
                                     <textarea id="message" name="message" rows="5" placeholder="편지 내용을 작성해 주세요."></textarea>
                                 </div>
                                 <div>
-                                    <label for=""></label>
                                     <button class="button-success pure-button button-xlarge" type="submit">
                                         <i class="fa fa-paper-plane"></i> 보내기</button>
                                 </div>
