@@ -446,55 +446,42 @@ $(function () {
   //   ease: "linear", // 일정한 속도
   // });        // 메뉴 클릭 시 해당 section으로 스크롤 이동 (메뉴는 닫히지 않음)
   $(function () {
-    // li 클릭 시 해당 li의 sub만 토글, 나머지는 닫힘
-    $(".menu-area nav > ul > li").on("click", function (e) {
-      var $sub = $(this).children(".sub");
-      if ($sub.length) {
-        e.stopPropagation();
-        // 다른 모든 sub 닫기
-        $(".menu-area nav .sub").not($sub).slideUp(150);
-        // 현재 sub만 토글
-        $sub.stop(true, true).slideToggle(300);
-      }
+    // PROFILE 버튼 클릭 시 서브메뉴 토글, 다른 서브메뉴 닫기
+    // 1. PROFILE(메인) 버튼을 클릭하면 바로 아래의 .sub(Portfolio1~5) 메뉴가 펼쳐집니다.
+    // 2. 이미 펼쳐진 상태에서 다시 클릭하면 .sub 메뉴가 닫힙니다.
+    // 3. 다른 서브메뉴가 열려 있으면 모두 닫고, 현재 PROFILE의 .sub만 토글합니다.
+    // 4. slideToggle(300)으로 부드러운 애니메이션 적용.
+    $(".menu-area nav .profile-main").on("click", function (e) {
+      e.preventDefault(); // a 태그의 기본 이동 막기
+      var $sub = $(this).siblings(".sub"); // PROFILE 바로 아래의 .sub 선택
+      $(".menu-area nav .sub").not($sub).slideUp(150); // 다른 모든 .sub 닫기
+      $sub.stop(true, true).slideToggle(300); // 현재 .sub만 토글
     });
     // 메뉴 링크(.menu-link)를 클릭했을 때 이벤트 처리
     $(".menu-link").on("click", function (e) {
-      // 클릭한 메뉴 항목의 상위 li 요소를 선택
       var $li = $(this).closest("li");
-
-      // 현재 li의 자식 중 .sub 클래스를 가진 서브메뉴를 선택
       var $sub = $li.children(".sub");
-
-      // 모든 메뉴 링크에서 'active' 클래스 제거
       $(".menu-link").removeClass("active");
-
-      // 클릭한 메뉴 링크에 'active' 클래스 추가
       $(this).addClass("active");
-
-      // 만약 클릭한 메뉴가 서브메뉴 안에 있다면,
-      // 그 부모 메뉴에도 'active' 클래스 추가
       if ($li.parent().hasClass("sub")) {
         $li.parents("li").children(".menu-link").addClass("active");
       }
-
+      // target='_blank' 링크는 기본 동작 유지 (새 창)
+      if ($(this).attr("target") === "_blank") {
+        return;
+      }
       // 서브메뉴(.sub)가 없는 메뉴일 경우 (즉, 단일 링크인 경우)
       if (!$sub.length) {
-        // 기본 링크 동작(페이지 이동 등)을 막음
         e.preventDefault();
-
-        // 클릭한 링크의 href 속성 값을 가져옴 (예: #s1, #s2 등)
         var target = $(this).attr("href");
-
-        // 해당 ID를 가진 요소가 페이지 내에 존재할 경우
         if ($(target).length) {
           var scrollOffset = 0;
-
-          // CONTACT 메뉴(#s7)를 클릭한 경우, 스크롤 위치 보정값을 설정
-          if (target === "#s7") {
-            scrollOffset = 20; // 필요에 따라 px 값 조정 가능
-          }
-
-          // 해당 섹션으로 부드럽게 스크롤 이동 (보정값 적용)
+          if (target === "#s1") scrollOffset = 80;
+          if (target === "#s2") scrollOffset = 80;
+          if (target === "#s4") scrollOffset = 80;
+          if (target === "#s5") scrollOffset = 100;
+          if (target === "#s6") scrollOffset = 120;
+          if (target === "#s7") scrollOffset = 30;
           $("html, body").animate(
             {
               scrollTop: $(target).offset().top - scrollOffset,
@@ -502,9 +489,6 @@ $(function () {
             600
           );
         }
-
-        // 다른 모든 서브메뉴를 닫음 (슬라이드 업 애니메이션)
-        $(".menu-area nav .sub").slideUp(300);
       }
     });
 
