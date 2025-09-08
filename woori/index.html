@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/woori.css" />
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/woori.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="sub-bg-wrap"></div>
+      <div class="main-header">
+        <div class="logo">
+          <a href="#">
+            <img src="img/default.png" alt="img" />
+          </a>
+        </div>
+        <nav>
+          <div class="sub-bg">
+            <div class="menu-wrap">
+              <img src="img/event-img.png" alt="img" />
+            </div>
+            <div class="ico_plus">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 5L15 15"
+                  stroke="#989FA7"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M15 5L5 15"
+                  stroke="#989FA7"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+          </div>
+          <ul>
+            <li>
+              <a href="#">가입/개통</a>
+              <ul class="sub">
+                <li><a href="#">간편 유심신청</a></li>
+                <li><a href="#">고객 후기</a></li>
+                <li><a href="#">개통가이드</a></li>
+                <li><a href="#">셀프개통하기</a></li>
+                <li><a href="#">유심 배송 조회</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">요금제</a>
+              <ul class="sub">
+                <li><a href="#">전체 요금제</a></li>
+                <li><a href="#">부가서비스</a></li>
+                <li><a href="#">로밍</a></li>
+                <li><a href="#">소액결제</a></li>
+                <li><a href="#">나만의 요금제 찾기</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#">혜택</a>
+              <ul class="sub">
+                <li><a href="#">이벤트</a></li>
+                <li><a href="#">친구추천</a></li>
+                <li><a href="#">친구결합</a></li>
+                <li><a href="#">제휴서비스 안내</a></li>
+                <li><a href="#">멤버십</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">고객지원</a>
+              <ul class="sub">
+                <li><a href="#">서비스 소개</a></li>
+                <li><a href="#">전화 상담</a></li>
+                <li><a href="#">자주하는 질문</a></li>
+                <li><a href="#">서식자료실</a></li>
+                <li><a href="#">이용자 피해 예방 센터</a></li>
+                <li><a href="#">1:1 문의</a></li>
+                <li><a href="#">공지사항</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <ul class="sub-menu">
+          <li>
+            <a href="#"><img src="img/search-icon.png" /></a>
+          </li>
+
+          <li>
+            <a href="#"><img src="img/user-icon.png" /></a>
+          </li>
+
+          <div class="login">
+            <li>
+              <a href="#"><p>로그인</p></a>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </header>
+    <section>
+      <div class="center-box">
+        <div class="left-con">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="#"><img src="img/default (1).jpg" alt="image1" /></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#"><img src="img/default (2).jpg" alt="image2" /></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#"><img src="img/default (3).jpg" alt="image3" /></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#"><img src="img/default (4).jpg" alt="image4" /></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#"><img src="img/default (5).jpg" alt="image5" /></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#"><img src="img/default (6).jpg" alt="image6" /></a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#"><img src="img/default.jpg" alt="image7" /></a>
+              </div>
+            </div>
+            <div class="btns">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+            <div class="play-pause">
+              <a href="#">
+                <img src="img/icons8-play-48.png" alt="play" class="play" />
+                <img src="img/icons8-stop-48.png" alt="stop" class="pause" />
+              </a>
+            </div>
+          </div>
+          <div class="content-box">
+            <div class="text">
+              <p>요금제 찾기 고민되신다면!</p>
+              <h2>나만의 요금제 찾기!</h2>
+              <p>나만의 요금제 찾기!</p>
+            </div>
+            <img src="img/thinking (2).gif" alt="" />
+          </div>
+        </div>
+        <div class="slide-right">
+          <div class="right-image">
+            <div class="first">
+              <a href="#">
+                <p>가입 신청하기</p>
+                <img
+                  src="img/pc_main_myinfo.2bdad8fed8d8c8222ebf.png"
+                  alt="ckeck"
+                />
+              </a>
+            </div>
+            <div class="second">
+              <a href="#">
+                <p>셀프 개통하기</p>
+                <img
+                  src="img/pc_main_check.04b41211210f89a8c556.png"
+                  alt="info"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="right2-image">
+            <h1>쏟아지는 우리 혜택은</h1>
+            <p>아무도 못 말려<img src="img/default (1).png" alt="image" /></p>
+          </div>
+          <div class="right3-image">
+            <div class="right-first">
+              <a href="#">
+                <img
+                  src="img/imgi_8_699eb517-3304-437f-9c1c-c7d78d28cf94.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div class="right-second">
+              <a href="#">
+                <img
+                  src="img/imgi_9_efde37ab-96f8-4a1c-8226-e3ec7c340b71.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+          <div class="right4-image">
+            <h1>돌려받는 내 혜택은</h1>
+            <p>
+              누구도 따라올 수 없어! <img src="img/다운로드.png" alt="icon" />
+            </p>
+          </div>
+          <div class="right5-image">
+            <div class="right2-first">
+              <a href="#">
+                <img src="img/1234.png" alt="" />
+                <h1>친구 결합</h1>
+                <p>친구랑 결합하고 요금할인 받으세요!</p>
+              </a>
+            </div>
+            <div class="right2-second">
+              <a href="#">
+                <img src="img/mem.png" alt="" />
+                <h1>멤버십</h1>
+                <p>가입하면 누구나 멤버십 혜택 드려요!</p>
+              </a>
+            </div>
+          </div>
+          <div class="right6-image">
+            <h1>우리WON모바일의</h1>
+            <p>
+              서비스를 한눈에 봐요<img
+                src="img/img_s24_emoji-eyes.4d35df9bf95ac25555cd.png"
+                alt="icon"
+              />
+            </p>
+          </div>
+          <div class="right7-image">
+            <div class="right3-first">
+              <div class="txt">
+                <a href="#">
+                  <h1>우리WON모바일</h1>
+                  <p>이용안내</p>
+                  <img
+                    src="img/img_s150_serviceP01.cdbce23dad978b2ef822.png"
+                    alt="img"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="right3-second">
+              <div class="txt">
+                <a href="#">
+                  <h1>매력적인</h1>
+                  <p>요금제 가입하기</p>
+                  <img
+                    src="img/img_s150_serviceP02.0ac1437de655208f57f8.png"
+                    alt="img"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="right3-third">
+              <div class="txt">
+                <a href="#">
+                  <h1>유심</h1>
+                  <p>셀프개통 가이드</p>
+                  <img
+                    src="img/img_s150_serviceP03.b9a7e7397b5f577041c3.png"
+                    alt="img"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="right3-fours">
+              <div class="txt">
+                <a href="#">
+                  <h1>eSIM</h1>
+                  <p>셀프개통 가이드</p>
+                  <img
+                    src="img/img_s150_serviceP04.32bc3fc8ce134f95fd5f.png"
+                    alt="img"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="right8-image">
+            <div class="right4-first">
+              <img src="img/img_s54_qna.c8916e7376794d52c4ba.png" alt="icon" />
+              <a href="#">
+                <h2>자주하는 질문<br /></h2>
+                <p>궁금한 점을 한 번에 해결!</p>
+              </a>
+            </div>
+            <div class="right4-second">
+              <img src="img/img_s54_usim.556e481ccbdde1ac7ebe.png" alt="icon" />
+              <a href="#">
+                <h2>유심신청<br /></h2>
+                <p>가입 신청하기 전 유심 먼저 신청!</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <ul class="footer-links">
+            <li>
+              <a href="#"><strong>이용약관</strong></a>
+            </li>
+            <li>
+              <a href="#"><strong>개인정보처리방침</strong></a>
+            </li>
+            <li><a href="#">명의도용방지서비스</a></li>
+            <li><a href="#">이용자피해예방</a></li>
+            <li><a href="#">불법스팸대응센터</a></li>
+            <li>
+              <a href="#">서비스 이용가능 지역<br /></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-middle">
+          <div class="footer-logo">
+            <img src="img/default.png" alt="WON Mobile 로고" />
+          </div>
+          <div class="footer-info">
+            <p><strong>고객센터 운영시간</strong>: 평일 09시-18시</p>
+            <p>
+              <br /><strong>114</strong>(우리WON모바일 가입자 무료) |
+              <strong>1544-1000</strong>(유료)<br />
+            </p>
+            <div class="footer-info2">
+              <p>대표자: 정진완 |</p>
+              <p>사업자등록번호: 201-81-02819 |</p>
+              <p>주소: 서울특별시 중구 소공로 51 우리은행</p>
+              <p>통신판매신고: 제2010-서울 중구-0642호</p>
+              <p>ⓒ Woori Bank. All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
