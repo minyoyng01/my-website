@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#warp {
+    width: 100%;
+    margin: 0 auto;
+
+
+}
+
+.center-box {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+
+    width: 100%;
+    height: 150px;
+
+}
+
+/* header안의 .center-box만 선택함- 하위선택자 */
+header .center-box {
+    height: 150px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 하위 선택자 + 태그선택자 */
+header .center-box nav {
+    width: 430px;
+    height: 22px;
+
+}
+
+/* 주메뉴만 가로로 배치 */
+header .center-box nav>ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .center-box nav>ul>li>a {
+    text-align: center;
+    padding-bottom: 10px;
+
+}
+
+/* 주메뉴먼저 > 서브메뉴  */
+/* 주메뉴에 마우스 오버하면 글자색 변경 */
+header .center-box nav>ul>li:hover>a {
+    color: #999;
+
+}
+
+header .center-box nav>ul>li {
+    /*  */
+    position: relative;
+}
+
+/* 서브메뉴 */
+header .center-box nav .sub {
+    background-color: #333;
+    padding: 20px;
+
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+    /* 서브메뉴가 */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+header .center-box nav .sub li a {
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+
+    white-space: nowrap;
+
+}
+
+/* 서브메뉴에 마우스 오버하면 글자색 변경 */
+header .center-box nav .sub li a:hover {
+    color: #999;
+}
+
+/* 주메뉴에 마우스 오버하면 서브메뉴 나타남 */
+
+header .center-box nav>ul>li:hover .sub {
+    opacity: 1;
+    visibility: visible;
+
+}
+
+header .center-box .side-menu ul {
+    display: flex;
+    gap: 15px;
+
+}
+
+header .center-box .side-menu ul li a:hover {
+    color: #999;
+}
+
+header .center-box .side-menu ul li:last-child a {
+    /* 마지막 li a태그에 장바구니 이미지 배경으로 넣음 */
+    background-image: url(../img/header_ico_cart.jpg);
+    background-size: contain;
+    background-position: center;
+    /* 안쪽 여백 : 위아래 2px 좌우 4px */
+    padding: 1px 6px;
+    color: #fff;
+}
+
+
+
+main .banner .center-box ul li img {
+    width: 100%;
+}
+
+/* 제목과 설명이 있는 영역에 안쪽 여백 위아래:20px 좌우 10px 설정 */
+main .banner .center-box ul li .des {
+    padding: 20px 10px;
+}
+
+main .banner .center-box ul {
+    height: 1950px;
+    display: flex;
+    flex-flow: column wrap;
+    /* 가로간격 : 30px 세로간격 : 20px */
+    gap: 30px 20px;
+
+}
+
+main .banner .center-box ul li {
+    width: 30.5%;
+    background-color: #eee;
+    /* 위아래 10px */
+    padding: 10px;
+
+}
+
+main .banner .center-box ul li .des h2 {
+    /* 글자 굵기를 보통으로 설정 */
+    font-weight: normal;
+    /* 글자 크기 */
+    font-size: 20px;
+    /* p태그랑 20px 떨어지도록 바깥 여백 설정 */
+    margin-bottom: 20px;
+}
+
+main .banner .center-box ul li .des p {
+    font-size: 13px;
+    color: #666;
+    /* 줄간격 */
+    line-height: 22px;
+
+}
+
+main .banner {
+    margin-top: 60px;
+}
+
+/* 푸터 */
+
+footer {
+
+    margin-top: 60px;
+    background-color: #f9f9f9;
+    width: 100%;
+    padding: 50px 0;
+}
+
+footer .center-box {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    line-height: 30px;
+}
+
+footer .center-box .footer1 ul li a {
+    padding: 5px;
+}
+
+footer .center-box .footer1 ul li a:hover {
+    text-decoration: underline;
+}
+
+footer .center-box .footer1 ul li:nth-child(3) a {
+    font-weight: bold;
+}
+
+footer .center-box .footer2 h2 {
+    font-weight: normal;
+    font-size: 13px;
+}
+
+footer .center-box .footer2 span {
+    /* 대표문의 ~ 토요일, 일요일, 공휴일 휴무 */
+    font-size: 16px;
+    margin: 5px 0;
+    /* margin적용 */
+    display: block;
+}
+
+footer .center-box .footer2 .bank {
+    /* 은행계좌 ~ 예금주 : ㈜홍진경 */
+    margin-top: 40px;
+}
+
+footer .center-box .footer3 h3 {
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+footer .center-box .footer3 address {
+
+    /* 글자 기울리지 않게 */
+    font-style: normal;
+    margin-bottom: 24px;
+
+}
