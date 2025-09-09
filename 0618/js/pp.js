@@ -457,38 +457,67 @@ $(function () {
       $(".menu-area nav .sub").not($sub).slideUp(150); // 다른 모든 .sub 닫기
       $sub.stop(true, true).slideToggle(300); // 현재 .sub만 토글
     });
-    // 메뉴 링크(.menu-link)를 클릭했을 때 이벤트 처리
-    $(".menu-link").on("click", function (e) {
+    // 메뉴 영역에서 .menu-link 클릭 시 항상 동작하도록 이벤트 위임
+    $(document).on("click", ".menu-link", function (e) {
+      // 🚀 SKILL 메뉴 클릭 시 → .s5(스킬)로 이동
+      if ($(this).text().trim() === "SKILL") {
+        e.preventDefault();
+        var headerHeight = $(".header").outerHeight() || 0;
+        var s5ExtraOffset = 20; // 필요시 조정
+        if ($(".s5").length) {
+          $("html, body").animate(
+            {
+              scrollTop: $(".s5").offset().top - headerHeight - s5ExtraOffset,
+            },
+            600
+          );
+        }
+        return;
+      }
       var $li = $(this).closest("li");
       var $sub = $li.children(".sub");
+
       $(".menu-link").removeClass("active");
       $(this).addClass("active");
       if ($li.parent().hasClass("sub")) {
         $li.parents("li").children(".menu-link").addClass("active");
       }
-      // target='_blank' 링크는 기본 동작 유지 (새 창)
+
       if ($(this).attr("target") === "_blank") {
         return;
       }
-      // 서브메뉴(.sub)가 없는 메뉴일 경우 (즉, 단일 링크인 경우)
-      if (!$sub.length) {
+
+      var target = $(this).attr("href");
+
+      // 🚀 PROFILE(메인 메뉴) 클릭 시 → 포트폴리오(s4)로 이동
+      if ($(this).hasClass("profile-main") || target === "#s3") {
         e.preventDefault();
-        var target = $(this).attr("href");
-        if ($(target).length) {
-          var scrollOffset = 0;
-          if (target === "#s1") scrollOffset = 80;
-          if (target === "#s2") scrollOffset = 80;
-          if (target === "#s4") scrollOffset = 80;
-          if (target === "#s5") scrollOffset = 100;
-          if (target === "#s6") scrollOffset = 120;
-          if (target === "#s7") scrollOffset = 30;
+        var headerHeight = $(".header").outerHeight() || 0;
+        var s4ExtraOffset = 20; // 필요시 조정
+        if ($(".s4").length) {
           $("html, body").animate(
             {
-              scrollTop: $(target).offset().top - scrollOffset,
+              scrollTop: $(".s4").offset().top - headerHeight - s4ExtraOffset,
             },
             600
           );
         }
+        return;
+      }
+
+      // 🚀 일반 메뉴 (서브 없는 경우)만 스크롤 이동
+      if (!$sub.length && target && $(target).length) {
+        e.preventDefault();
+        var headerHeight = $(".header").outerHeight() || 0;
+        var extraOffset = $(target).data("offset") || 0;
+        var scrollOffset = headerHeight + extraOffset;
+
+        $("html, body").animate(
+          {
+            scrollTop: $(target).offset().top - scrollOffset,
+          },
+          600
+        );
       }
     });
 
